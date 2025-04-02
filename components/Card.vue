@@ -1,12 +1,14 @@
 <script setup lang="ts">
-defineProps<{ title: string; stack: string[], image: string, url: string }>()
+defineProps<{ title: string; stack: string[], image: string, url: string, responsive: string }>()
 </script>
 
 <template>
   <NuxtLink :to="url">
     <section class="p-4 border border-secondary rounded-lg hover:bg-orange-50">
-      <figure class="rounded-md overflow-hidden">
+      <figure class="relative rounded-md overflow-hidden">
         <img class="md:w-full" :src="image" :alt="title" loading="lazy" />
+        <p class="absolute right-2 bottom-2 bg-white text-primary text-xs py-1 px-2 rounded-xl border border-primary">
+          {{ responsive }}</p>
       </figure>
       <div class="py-2">
         <header>
