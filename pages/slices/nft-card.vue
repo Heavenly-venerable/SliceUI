@@ -24,13 +24,19 @@ const imageStyle = computed(() => ({
     <div style="perspective: 300px">
       <div ref="container" class="max-w-sm w-80 p-2 bg-slate-900 shadow-lg rounded-xl" :style="cardStyle">
         <div class="flex flex-col gap-y-2">
-          <div class="w-full h-full overflow-hidden rounded-lg">
+          <div class="relative w-full h-full flex justify-center overflow-hidden rounded-lg">
             <img :style="imageStyle"
               src="https://images.unsplash.com/photo-1634632000017-d77eed8cd8f3?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bW9ua2V5JTIwaWxsdXN0cmF0aW9ufGVufDB8fDB8fHww"
               alt="Monkey Illustration" />
+            <p
+              class="absolute px-8 top-0 bg-blue-500 text-lg text-white font-semibold border-s-4 border-e-4 border-b-4 border-slate-900 rounded-ee-lg rounded-es-lg">
+              Uncommon</p>
+            <p
+              class="absolute px-8 bottom-0 bg-slate-800 text-lg text-white font-semibold border-s-4 border-e-4 border-t-4 border-slate-900 rounded-se-lg rounded-ss-lg">
+              0.5 ETH</p>
           </div>
           <div class="p-2 text-white space-y-2">
-            <h1 class="text-xl">MONKEY LEE</h1>
+            <h1 class="text-xl font-bold">MONKEY LEE #67</h1>
             <div class="flex gap-x-2">
               <span class="px-4 rounded-lg bg-black">M</span>
               <h2 class="text-slate-400">MONKEY KING</h2>
