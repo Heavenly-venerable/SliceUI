@@ -1,9 +1,9 @@
 <script setup lang="ts">
-const categories: string[] = ["semua", "national", "international", "ekonomi", "olahraga", "teknologi", "hiburan", "gaya hidup"]
+const categories: string[] = ["terbaru", "national", "international", "ekonomi", "olahraga", "teknologi", "hiburan", "gaya hidup"]
 const isHidden = ref(false)
 let lastScrollTop = 0
 
-const { data, error, status, refresh } = useAsyncData("news", () => $fetch(`https://berita-indo-api-next.vercel.app/api/cnn-news/`))
+const { data, error, status, refresh } = useAsyncData("news", () => $fetch("https://api-berita-indonesia.vercel.app/cnn/terbaru"))
 
 const handleScroll = () => {
   const currentScroll = window.scrollY
@@ -54,9 +54,10 @@ onUnmounted(() => {
         <p class="text-slate-500">Explore the world by one click</p>
       </div>
       <div class="relative overflow-hidden rounded-3xl">
-        <img class="max-w-full h-64 object-cover" :src="data?.data[0]?.image.large" :alt="data?.data[0]?.title">
+        <img class="max-w-full h-64 object-cover" :src="data?.data?.posts[0].thumbnail"
+          :alt="data?.data?.posts[0]?.title">
         <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-100/30 to-transparent"></div>
-        <p class="absolute bottom-0 left-0 p-4 text-white">{{ data?.data[0]?.title }}</p>
+        <p class="absolute bottom-0 left-0 p-4 text-white">{{ data?.data?.posts[0]?.title }}</p>
       </div>
       <div class="overflow-auto no-scrollbar">
         <ul class="flex items-center gap-x-2">
@@ -70,12 +71,12 @@ onUnmounted(() => {
         <div v-if="status === 'pending'" class="place-self-center text-lg">Loading ...</div>
         <div v-else-if="error" class="place-self-center text-lg text-red-500">{{ error }}</div>
         <div v-else-if="data" class="flex flex-col gap-y-4">
-          <div v-for="news in data.data" class="flex p-2 bg-slate-100 rounded-xl gap-x-4">
+          <div v-for="news in data.data.posts" class="flex p-2 bg-slate-100 rounded-xl gap-x-4">
             <div class="overflow-hidden rounded-lg">
-              <img class="w-24 h-full object-cover" :src="news.image.small" :alt="news.title" loading="lazy">
+              <img class="w-24 h-full object-cover" :src="news.thumbnail" :alt="news.title" loading="lazy">
             </div>
             <div class="w-44">
-              <p class="py-2 text-xs">{{ news.contentSnippet.split("").slice(0, 70).join("") }}...</p>
+              <p class="py-2 text-xs">{{ news.description.split("").slice(0, 70).join("") }}...</p>
               <div class="py-2 flex justify-between items-center text-slate-500 text-xs">
                 <span>CNN News</span>
                 <span>Today</span>
