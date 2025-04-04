@@ -3,7 +3,7 @@ const categories: string[] = ["semua", "national", "international", "ekonomi", "
 const isHidden = ref(false)
 let lastScrollTop = 0
 
-const { data, error, status } = useAsyncData("news", () => $fetch(`https://berita-indo-api-next.vercel.app/api/cnn-news/`))
+const { data, error, status, refresh } = useAsyncData("news", () => $fetch(`https://berita-indo-api-next.vercel.app/api/cnn-news/`))
 
 const handleScroll = () => {
   const currentScroll = window.scrollY
