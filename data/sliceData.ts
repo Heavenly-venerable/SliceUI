@@ -23,6 +23,14 @@ export const rawSliceData: SliceItem[] = [
       "https://cdn.dribbble.com/userupload/37535292/file/original-98366cd95ff14195be8a889063ee001b.png?format=webp&resize=640x480&vertical=center",
     responsive: "Mobile",
   },
+  {
+    id: 3,
+    title: "News Feed",
+    stack: ["Vue", "Tailwind"],
+    image:
+      "https://cdn.dribbble.com/userupload/37535292/file/original-98366cd95ff14195be8a889063ee001b.png?format=webp&resize=640x480&vertical=center",
+    responsive: "Mobile",
+  },
 ];
 
 export const sliceData: SliceItem[] = rawSliceData.map((item) => ({
