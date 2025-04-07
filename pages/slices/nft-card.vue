@@ -5,14 +5,14 @@ const isMobile = useMediaQuery('(max-width: 700px)')
 const { tilt, roll, source } = useParallax(container)
 
 const cardStyle = computed(() => ({
-  transform: `rotateX(${roll.value * (isMobile.value ? 10 : 20)}deg) rotateY(${tilt.value * (isMobile.value ? 10 : 20)}deg)`,
+  transform: `rotateX(${roll.value * (isMobile.value ? 10 : 5)}deg) rotateY(${tilt.value * (isMobile.value ? 10 : 5)}deg)`,
   transition: '.3s ease-out all',
 }))
 
 const imageStyle = computed(() => ({
-  transform: `rotateX(${roll.value * (isMobile.value ? 30 : 40)}deg) rotateY(${tilt.value * (isMobile.value ? 30 : 40)}deg) scale(1.1)`,
+  transform: `rotateX(${roll.value * (isMobile.value ? 30 : 20)}deg) rotateY(${tilt.value * (isMobile.value ? 30 : 20)}deg) scale(1.1)`,
   transition: '.3s ease-out all',
-  perspective: '300px',
+  perspective: isMobile.value ? "300px" : "none"
 }))
 
 const perspective = computed(() => {
