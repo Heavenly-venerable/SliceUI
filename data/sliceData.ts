@@ -20,7 +20,7 @@ export const rawSliceData: SliceItem[] = [
     title: "NFT Card",
     stack: ["Vue", "Tailwind", "VueUse"],
     image:
-      "https://cdn.dribbble.com/userupload/37535292/file/original-98366cd95ff14195be8a889063ee001b.png?format=webp&resize=640x480&vertical=center",
+      "/img/nft-card.png",
     responsive: "Mobile",
   },
   {
@@ -28,7 +28,7 @@ export const rawSliceData: SliceItem[] = [
     title: "News Feed",
     stack: ["Vue", "Tailwind"],
     image:
-      "https://cdn.dribbble.com/userupload/37535292/file/original-98366cd95ff14195be8a889063ee001b.png?format=webp&resize=640x480&vertical=center",
+      "/img/news-feed.png",
     responsive: "Mobile",
   },
 ];
