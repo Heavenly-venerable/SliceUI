@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import { ref, computed, watch } from 'vue'
-import { useParallax, useMediaQuery } from '@vueuse/core'
-
 const container = ref<HTMLElement | null>(null)
 const isMobile = useMediaQuery('(max-width: 700px)')
 
@@ -17,11 +14,16 @@ const imageStyle = computed(() => ({
   transition: '.3s ease-out all',
   perspective: '300px',
 }))
+
+const perspective = computed(() => {
+  const isActive = Math.abs(roll.value) >= 0.49 && Math.abs(roll.value) <= 0.51
+  return isActive ? 'active' : 'none'
+})
 </script>
 
 <template>
   <div class="min-h-screen flex justify-center items-center bg-blue-700">
-    <div style="perspective: 300px">
+    <div :style="{ perspective: perspective === 'active' ? 'none' : '300px' }">
       <div ref="container" class="max-w-sm w-80 p-2 bg-slate-900 shadow-lg rounded-xl" :style="cardStyle">
         <div class="flex flex-col gap-y-2">
           <div class="relative w-full h-full flex justify-center overflow-hidden rounded-lg">
