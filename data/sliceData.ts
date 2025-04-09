@@ -26,7 +26,7 @@ export const rawSliceData: SliceItem[] = [
   {
     id: 3,
     title: "News Feed",
-    stack: ["Vue", "Tailwind"],
+    stack: ["Vue", "Tailwind", "API"],
     image:
       "/img/news-feed.png",
     responsive: "Mobile",
@@ -37,6 +37,14 @@ export const rawSliceData: SliceItem[] = [
     stack: ["Vue", "Tailwind"],
     image:
       "https://cdn.dribbble.com/userupload/19115929/file/original-9f54762dec654697acad9544d2db2921.jpg?format=webp&resize=640x480&vertical=center",
+    responsive: "Mobile",
+  },
+  {
+    id: 5,
+    title: "Invoice",
+    stack: ["Vue", "Tailwind"],
+    image:
+      "/img/invoice.png",
     responsive: "Mobile",
   },
 ];

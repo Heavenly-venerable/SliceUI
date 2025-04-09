@@ -110,7 +110,7 @@ const showSkills = ref(false)
               </div>
               <h3 class="text-slate-500">Profession</h3>
               <div class="border-b border-b-slate-500">
-                <p class="text-white">Freelance at Fiver</p>
+                <p class="text-white">Freelance at Fiverr</p>
               </div>
             </section>
           </transition>
